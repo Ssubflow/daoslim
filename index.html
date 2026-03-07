@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Препарат DAO Slim: Контроль сахара и здоровое похудение</title>
+    <style>
+        :root {
+            --main-blue: #1e40af;
+            --soft-blue: #eff6ff;
+            --success-green: #16a34a;
+            --text-main: #1f2937;
+            --danger: #dc2626;
+        }
+
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background: #f1f5f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container { max-width: 850px; margin: 0 auto; padding: 20px; }
+        
+        .article-wrap { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+            margin-bottom: 30px;
+        }
+
+        /* Таймер акции */
+        .timer-box {
+            background: #fee2e2;
+            border: 2px solid var(--danger);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .timer-digits { font-size: 32px; font-weight: 800; color: #000; letter-spacing: 2px; }
+
+        h1 { font-size: 30px; color: var(--main-blue); line-height: 1.2; margin-bottom: 20px; }
+        h2 { font-size: 24px; color: var(--main-blue); margin-top: 40px; border-left: 5px solid var(--main-blue); padding-left: 15px; }
+        
+        .img-full { width: 100%; border-radius: 12px; margin: 20px 0; display: block; }
+        
+        /* Увеличенное фото препарата с адаптивностью */
+        .product-img { 
+            width: 550px; 
+            max-width: 100%; 
+            height: auto;
+            display: block; 
+            margin: 35px auto; 
+            filter: drop-shadow(0 15px 20px rgba(0,0,0,0.12)); 
+        }
+
+        /* Таблица результатов */
+        .res-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 8px; overflow: hidden; }
+        .res-table th { background: var(--main-blue); color: white; padding: 15px; text-align: left; }
+        .res-table td { padding: 15px; border-bottom: 1px solid #e2e8f0; }
+
+        /* Блок отзывов */
+        .review-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            border: 1px solid #e2e8f0;
+        }
+        .review-img { width: 160px; height: 210px; object-fit: cover; border-radius: 8px; flex-shrink: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .rev-name { font-weight: bold; color: var(--main-blue); font-size: 18px; display: block; }
+        .badge { background: #dcfce7; color: #166534; font-size: 12px; font-weight: bold; padding: 3px 8px; border-radius: 5px; margin-bottom: 10px; display: inline-block; }
+
+        /* FAQ */
+        .faq-item { margin-bottom: 15px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; }
+        .faq-q { font-weight: bold; color: var(--main-blue); display: block; margin-bottom: 5px; }
+
+        /* Кнопка заказа */
+        .cta-section { text-align: center; padding: 40px; background: var(--soft-blue); border-radius: 16px; margin-top: 40px; }
+        .order-btn { 
+            display: inline-block; 
+            background: var(--success-green); 
+            color: white; 
+            padding: 22px 55px; 
+            text-decoration: none; 
+            border-radius: 12px; 
+            font-weight: 800; 
+            font-size: 24px;
+            box-shadow: 0 6px 20px rgba(22, 163, 74, 0.4);
+            transition: 0.3s transform ease;
+        }
+        .order-btn:hover { transform: scale(1.05); background: #15803d; }
+
+        @media (max-width: 768px) {
+            .review-card { flex-direction: column; text-align: center; }
+            .review-img { width: 100%; max-width: 250px; margin: 0 auto; height: auto; }
+            h1 { font-size: 24px; }
+            .article-wrap { padding: 20px; }
+            .timer-digits { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <article class="article-wrap">
+        
+        <!-- ТАЙМЕР -->
+        <div class="timer-box">
+            <span style="color:var(--danger); font-weight:bold; text-transform:uppercase; font-size:14px;">До завершения акции по спеццене осталось:</span>
+            <div id="countdown" class="timer-digits">23:59:59</div>
+        </div>
+
+        <h1>Препарат DAO Slim: Двойной контроль сахара и эффективное жиросжигание</h1>
+        
+        <!-- ТЕМАТИЧЕСКОЕ ФОТО САХАРА (sugar-bg.jpg) -->
+        <img src="sugar-bg.jpg" class="img-full" alt="Проблема сахара">
+
+        <p class="lead" style="font-size: 19px; color: #4b5563; font-weight: 500;">Устали от "сахарных качелей" и лишнего веса, который не уходит годами? Исследования подтверждают: высокий инсулин блокирует распад жиров. <strong>Препарат DAO Slim</strong> устраняет саму причину проблемы.</p>
+
+        <p>Когда уровень глюкозы постоянно завышен, организм теряет способность тратить энергию. Каждая порция углеводов превращается в жировое депо. Комплекс <b>DAO Slim</b> помогает восстановить метаболизм, возвращая сахар в норму и запуская процесс естественного похудения.</p>
+
+        <!-- ФОТО ПРЕПАРАТА (УВЕЛИЧЕННОЕ) (dao-slim.png) -->
+        <img src="dao-slim.png" class="product-img" alt="DAO Slim">
+
+        <h2>Сравнение результатов: До и После</h2>
+        <table class="res-table">
+            <thead>
+                <tr><th>Параметр</th><th>До приема</th><th>Курс DAO Slim</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Уровень глюкозы</td><td>8.8 – 11.5 ммоль/л</td><td>5.1 – 5.7 ммоль/л</td></tr>
+                <tr><td>Лишний вес</td><td>С трудом поддается диетам</td><td>Минус 7-10 кг за курс</td></tr>
+                <tr><td>Тяга к сладкому</td><td>Постоянные срывы</td><td>Полный контроль аппетита</td></tr>
+                <tr><td>Состояние сосудов</td><td>Повышенная хрупкость</td><td>Восстановление тонуса</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Истории реальных пациентов</h2>
+
+        <div class="review-card">
+            <img src="rev1.jpg" class="review-img" alt="Анна">
+            <div class="review-content">
+                <span class="rev-name">Анна, 44 года</span>
+                <span class="badge">Результат: -14 кг за 2 месяца</span>
+                <p>«Сахар прыгал до 10.4. С DAO Slim показатели в норме уже на вторую неделю. Самое крутое — пропал живот, а я даже в зал не ходила!»</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <img src="rev2.jpg" class="review-img" alt="Сергей">
+            <div class="review-content">
+                <span class="rev-name">Светлана , 56 лет</span>
+                <span class="badge">Сахар снизился до 5.5</span>
+                <p>«Врачи пугали переходом на инъекции. Решила попробовать DAO Slim. Теперь сахар как у молодой, и -9 кг за курс. Чувствую себя бодрячком!»</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <img src="rev3.jpg" class="review-img" alt="Ольга">
+            <div class="review-content">
+                <span class="rev-name">Ольга, 38 лет</span>
+                <span class="badge">Минус 27 кг и идеальная кожа</span>
+                <p>«Тяга к сладкому исчезла. Раньше не могла жить без десертов, а теперь равнодушна. Вес ушел плавно, без стресса».</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <img src="rev4.jpg" class="review-img" alt="Иван">
+            <div class="review-content">
+                <span class="rev-name">Людмила П., 66 лет</span>
+                <span class="badge">Сахар 5.4 | Бодрость</span>
+                <p>«Исчезла постоянная жажда и сухость. Наконец-то цифры на глюкометре радуют».</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <img src="rev5.jpg" class="review-img" alt="Марина">
+            <div class="review-content">
+                <span class="rev-name">Марина В.</span>
+                <span class="badge">Вес ушел без спорта</span>
+                <p>«DAO Slim помог убрать "фартук" на животе. Сахар теперь 5.3 стабильно, никакой слабости и головокружений».</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <img src="rev6.jpg" class="review-img" alt="Елена">
+            <div class="review-content">
+                <span class="rev-name">Елена, 36 лет</span>
+                <span class="badge">Минус 4 размера за месяц</span>
+                <p>«Пропала привычка перекусывать на ночь. Сахар не скачет, аппетит умеренный. Очень довольна покупкой!»</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <img src="rev7.jpg" class="review-img" alt="Владимир">
+            <div class="review-content">
+                <span class="rev-name">Владимир, 69 лет</span>
+                <span class="badge">Сахар 5.7 (был 9.8)</span>
+                <p>«Уже через 14 дней сахар упал до нормы. Легкость необыкновенная, штаны стали спадать. Продолжаю курс!»</p>
+            </div>
+        </div>
+
+        <h2>Вопросы и ответы (FAQ)</h2>
+        <div class="faq-item">
+            <span class="faq-q">Как DAO Slim снижает вес?</span>
+            <p>Препарат нормализует углеводный обмен. Когда сахар в крови стабилен, организм перестает вырабатывать лишний инсулин, который блокирует сжигание жира.</p>
+        </div>
+        <div class="faq-item">
+            <span class="faq-q">Безопасно ли это для сердца?</span>
+            <p>Да, состав DAO Slim полностью натуральный. Он не вызывает учащенного сердцебиения и поддерживает эластичность сосудов.</p>
+        </div>
+<!-- ФОТО ПРЕПАРАТА (УВЕЛИЧЕННОЕ) (dao-slim.png) -->
+        <img src="dao-slim2.png" class="product-img" alt="DAO Slim">
+        <div class="cta-section">
+            <h3>Готовы вернуть здоровье и стройность?</h3>
+            <p style="margin-bottom: 25px; color: #64748b;">Закажите оригинальный DAO Slim со скидкой прямо сейчас!</p>
+            <!-- ВСТАВЬТЕ ВАШУ ССЫЛКУ НИЖЕ -->
+            <a href="https://click-curda.shop/r/6018ed71-64f5-4f16-9612-af2ac0df0d98" class="order-btn">ПЕРЕЙТИ К ОФОРМЛЕНИЮ</a>
+            <p style="margin-top: 20px; font-size: 13px; color: var(--danger); font-weight: bold;">* Количество упаковок по акции ограничено!</p>
+        </div>
+
+    </article>
+
+    
+</div>
+
+<script>
+    function updateTimer() {
+        const now = new Date();
+        const end = new Date();
+        end.setHours(23, 59, 59);
+        let diff = end - now;
+        let h = Math.floor(diff / 3600000);
+        let m = Math.floor((diff % 3600000) / 60000);
+        let s = Math.floor((diff % 60000) / 1000);
+        document.getElementById("countdown").innerHTML = 
+            (h < 10 ? "0"+h : h) + ":" + (m < 10 ? "0"+m : m) + ":" + (s < 10 ? "0"+s : s);
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+</script>
+
+</body>
+</html>
